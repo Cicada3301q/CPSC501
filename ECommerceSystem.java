@@ -2,12 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Product {
-    public int id;
-    public String name;
-    public double price;
-    public String type;
+    private int id;
+    private String name;
+    private double price;
+    private String type;
 
     public Product(int id, String name, double price, String type) {
+        setId(id);
+        setName(name);
+        setPrice(price);
+        setType(type);
         this.id = id;
         this.name = name;
         if (price < 0) {
@@ -17,6 +21,38 @@ class Product {
         if (type != "Regular" && type != "Promotional" && type != "Clearance") {
             throw new IllegalArgumentException("Invalid discount type");
         }
+        this.type = type;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -161,7 +197,7 @@ class Order {
     public double calculateTotal() {
         double total = 0;
         for (Product product : products) {
-            total += product.price - product.calculateDiscount();
+            total += product.getPrice() - product.calculateDiscount();
         }
         return total;
     }
