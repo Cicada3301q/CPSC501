@@ -145,7 +145,7 @@ class Order {
         return products;
     }
 
-    public double total() {
+    public double calculateTotal() {
         double total = 0;
         for (Product product : products) {
             total += product.price - product.calculateDiscount();
@@ -176,7 +176,7 @@ public class ECommerceSystem {
         // Calculate and print the total order amount for customer1
         double totalAmount = 0;
         for (Order order : customer1.getOrders()) {
-            totalAmount += order.total();
+            totalAmount += order.calculateTotal();
         }
         System.out.println(customer1.getName() + "'s total order amount: $" + totalAmount);
     }

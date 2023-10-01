@@ -29,6 +29,6 @@ public class ECommerceSystemTest {
         Order order = new Order(201, customer);
         order.addProduct(product1);
         order.addProduct(product2);
-        assertEquals(1039.98, order.total(), 0.01); // Total amount with discounts
+        assertEquals(1039.98, order.calculateTotal(), 0.01); // Total amount with discounts
     }
 }
