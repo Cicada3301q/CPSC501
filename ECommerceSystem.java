@@ -32,12 +32,16 @@ class Product {
 }
 
 class Customer {
+
     private int customerId;
     private String name;
     private String email;
     private List<Order> orders;
 
     public Customer(int customerId, String name, String email) {
+        if (customerId < 0) {
+            throw new IllegalArgumentException("Customer ID cannot be negative");
+        }
         this.customerId = customerId;
         this.name = name;
         this.email = email;
@@ -57,6 +61,9 @@ class Customer {
     }
 
     public void placeOrder(Order order) {
+        if (order == null) {
+            throw new IllegalArgumentException("Order cannot be null");
+        }
         orders.add(order);
     }
 
