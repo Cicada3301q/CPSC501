@@ -12,48 +12,6 @@ class Product {
         setName(name);
         setPrice(price);
         setType(type);
-        this.id = id;
-        this.name = name;
-        if (price < 0) {
-            throw new IllegalArgumentException("Invalid price");
-        }
-        this.price = price;
-        if (type != "Regular" && type != "Promotional" && type != "Clearance") {
-            throw new IllegalArgumentException("Invalid discount type");
-        }
-        this.type = type;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public double calculateDiscount() {
@@ -71,6 +29,50 @@ class Product {
         return discount;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        if (id < 0) {
+            throw new IllegalArgumentException("Invalid ID");
+        }
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        if (price < 0) {
+            throw new IllegalArgumentException("Invalid price");
+        }
+        this.price = price;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        if (!isValidDiscountType(type)) {
+            throw new IllegalArgumentException("Invalid discount type");
+        }
+        this.type = type;
+    }
+
+    private boolean isValidDiscountType(String type) {
+        return "Regular".equals(type) || "Promotional".equals(type) || "Clearance".equals(type);
+    }
 }
 
 class Customer {
