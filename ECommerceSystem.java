@@ -7,10 +7,11 @@ class Product {
     public double price;
     public String type;
 
-    public Product(int id, String name, double price) {
+    public Product(int id, String name, double price, String type) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.type = type;
     }
 
     public double calculateDiscount() {
@@ -27,7 +28,7 @@ class Product {
         }
         return discount;
     }
-    
+
 }
 
 class Customer {
@@ -70,8 +71,8 @@ class Employee {
     private String email;
     private List<Order> orders;
 
-    public Employee(int customerId, String name, String email) {
-        this.EmployeeId = EmployeeId;
+    public Employee(int employeeId, String name, String email) {
+        this.EmployeeId = employeeId;
         this.name = name;
         this.email = email;
         this.orders = new ArrayList<>();
@@ -95,12 +96,15 @@ class Employee {
     public String getEmployeeTelephoneNumber() {
         return ("(" + officeNumber + ") " + employeeExtension);
     }
+
     void setEmployeeExtension(String arg) {
         employeeExtension = arg;
     }
+
     String getOfficeNumber() {
         return officeNumber;
     }
+
     void setOfficeNumber(String arg) {
         officeNumber = arg;
     }
@@ -155,8 +159,8 @@ public class ECommerceSystem {
         Customer customer1 = new Customer(1, "Alice", "alice@example.com");
         Customer customer2 = new Customer(2, "Bob", "bob@example.com");
 
-        Product product1 = new Product(101, "Laptop", 799.99);
-        Product product2 = new Product(102, "Smartphone", 399.99);
+        Product product1 = new Product(101, "Laptop", 799.99, "Regular");
+        Product product2 = new Product(102, "Smartphone", 399.99, "Regular");
 
         Order order1 = new Order(201, customer1);
         Order order2 = new Order(202, customer2);
