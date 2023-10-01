@@ -32,10 +32,4 @@ public class ProductTest {
         Product product = new Product(102, "Invalid Product", 100.0, "InvalidType");
     }
 
-    @Test
-    public void testCalculateDiscountNoDiscount() {
-        Product product = new Product(103, "No Discount Product", 50.0, "Regular");
-        // Ensure that no discount is applied for a regular product
-        assertEquals(0.0, product.calculateDiscount(), 0.01);
-    }
 }

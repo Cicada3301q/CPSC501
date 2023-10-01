@@ -10,7 +10,13 @@ class Product {
     public Product(int id, String name, double price, String type) {
         this.id = id;
         this.name = name;
+        if (price < 0) {
+            throw new IllegalArgumentException("Invalid price");
+        }
         this.price = price;
+        if (type != "Regular" && type != "Promotional" && type != "Clearance") {
+            throw new IllegalArgumentException("Invalid discount type");
+        }
         this.type = type;
     }
 
