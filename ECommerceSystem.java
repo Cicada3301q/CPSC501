@@ -1,32 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Product {
+// Step 1: Create an abstract base class or interface for products.
+abstract class AbstractProduct {
     private int id;
     private String name;
     private double price;
-    private String type;
 
-    public Product(int id, String name, double price, String type) {
+    public AbstractProduct(int id, String name, double price) {
         setId(id);
         setName(name);
         setPrice(price);
-        setType(type);
-    }
-
-    public double calculateDiscount() {
-        double discount = 0;
-        if ("Regular".equals(type)) {
-            // Apply 10% discount for regular products.
-            discount = price * 0.1;
-        } else if ("Promotional".equals(type)) {
-            // Apply 20% discount for promotional products.
-            discount = price * 0.2;
-        } else if ("Clearance".equals(type)) {
-            // Apply 30% discount for clearance products.
-            discount = price * 0.3;
-        }
-        return discount;
     }
 
     public int getId() {
@@ -59,19 +43,47 @@ class Product {
         this.price = price;
     }
 
-    public String getType() {
-        return type;
+    // Step 3: Declare an abstract method for calculating discounts.
+    public abstract double calculateDiscount();
+}
+
+// Step 2: Create concrete subclasses for each product type.
+class RegularProduct extends AbstractProduct {
+    public RegularProduct(int id, String name, double price) {
+        super(id, name, price);
     }
 
-    public void setType(String type) {
-        if (!isValidDiscountType(type)) {
-            throw new IllegalArgumentException("Invalid discount type");
-        }
-        this.type = type;
+    // Step 3: Implement the discount calculation logic for regular products.
+    @Override
+    public double calculateDiscount() {
+        // Apply 10% discount for regular products.
+        return getPrice() * 0.1;
+    }
+}
+
+class PromotionalProduct extends AbstractProduct {
+    public PromotionalProduct(int id, String name, double price) {
+        super(id, name, price);
     }
 
-    private boolean isValidDiscountType(String type) {
-        return "Regular".equals(type) || "Promotional".equals(type) || "Clearance".equals(type);
+    // Step 3: Implement the discount calculation logic for promotional products.
+    @Override
+    public double calculateDiscount() {
+        // Apply 20% discount for promotional products.
+        return getPrice() * 0.2;
+    }
+}
+
+class ClearanceProduct extends AbstractProduct {
+    public ClearanceProduct(int id, String name, double price) {
+        super(id, name, price);
+    }
+
+    // Step 3: Implement the discount calculation logic for clearance products.
+    @Override
+    public double calculateDiscount() {
+        // Apply 30% discount for clearance products.
+        return getPrice() * 0.3;
     }
 }
 
@@ -172,7 +184,7 @@ class Employee {
 class Order {
     private int orderId;
     private Customer customer;
-    private List<Product> products;
+    private List<AbstractProduct> products;
 
     public Order(int orderId, Customer customer) {
         this.orderId = orderId;
@@ -188,17 +200,17 @@ class Order {
         return customer;
     }
 
-    public void addProduct(Product product) {
+    public void addProduct(AbstractProduct product) {
         products.add(product);
     }
 
-    public List<Product> getProducts() {
+    public List<AbstractProduct> getProducts() {
         return products;
     }
 
     public double calculateTotal() {
         double total = 0;
-        for (Product product : products) {
+        for (AbstractProduct product : products) {
             total += product.getPrice() - product.calculateDiscount();
         }
         return total;
@@ -210,8 +222,8 @@ public class ECommerceSystem {
         Customer customer1 = new Customer(1, "Alice", "alice@example.com");
         Customer customer2 = new Customer(2, "Bob", "bob@example.com");
 
-        Product product1 = new Product(101, "Laptop", 799.99, "Regular");
-        Product product2 = new Product(102, "Smartphone", 399.99, "Regular");
+        AbstractProduct product1 = new RegularProduct(101, "Laptop", 799.99);
+        AbstractProduct product2 = new RegularProduct(102, "Smartphone", 399.99);
 
         Order order1 = new Order(201, customer1);
         Order order2 = new Order(202, customer2);
