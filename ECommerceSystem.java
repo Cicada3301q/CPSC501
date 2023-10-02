@@ -87,25 +87,24 @@ class ClearanceProduct extends AbstractProduct {
     }
 }
 
-class Customer {
-
-    private int customerId;
+class Person {
+    private int id;
     private String name;
     private String email;
     private List<Order> orders;
 
-    public Customer(int customerId, String name, String email) {
-        if (customerId < 0) {
-            throw new IllegalArgumentException("Customer ID cannot be negative");
+    public Person(int id, String name, String email) {
+        if (id < 0) {
+            throw new IllegalArgumentException("ID cannot be negative");
         }
-        this.customerId = customerId;
+        this.id = id;
         this.name = name;
         this.email = email;
         this.orders = new ArrayList<>();
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -128,39 +127,18 @@ class Customer {
     }
 }
 
-class Employee {
-    private int EmployeeId;
-    private String name;
-    private String email;
-    private List<Order> orders;
+class Customer extends Person {
+    public Customer(int id, String name, String email) {
+        super(id, name, email);
+    }
+}
+
+class Employee extends Person {
     private EmployeePhoneNumber phoneNumber;
 
-    public Employee(int employeeId, String name, String email) {
-        this.EmployeeId = employeeId;
-        this.name = name;
-        this.email = email;
-        this.orders = new ArrayList<>();
+    public Employee(int id, String name, String email) {
+        super(id, name, email);
         this.phoneNumber = new EmployeePhoneNumber();
-    }
-
-    public int getEmployeeId() {
-        return EmployeeId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void placeOrder(Order order) {
-        orders.add(order);
-    }
-
-    public List<Order> getOrders() {
-        return orders;
     }
 
     public void setEmployeeExtension(String arg) {

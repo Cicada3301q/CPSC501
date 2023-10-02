@@ -12,7 +12,7 @@ public class EmployeeTest {
 
     @Test
     public void testGetEmployeeId() {
-        assertEquals(1, employee.getEmployeeId());
+        assertEquals(1, employee.getId());
     }
 
     @Test
