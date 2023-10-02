@@ -133,12 +133,14 @@ class Employee {
     private String name;
     private String email;
     private List<Order> orders;
+    private EmployeePhoneNumber phoneNumber;
 
     public Employee(int employeeId, String name, String email) {
         this.EmployeeId = employeeId;
         this.name = name;
         this.email = email;
         this.orders = new ArrayList<>();
+        this.phoneNumber = new EmployeePhoneNumber();
     }
 
     public int getEmployeeId() {
@@ -153,12 +155,34 @@ class Employee {
         return email;
     }
 
-    private String employeeExtension;
-    private String officeNumber;
+    public void placeOrder(Order order) {
+        orders.add(order);
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setEmployeeExtension(String arg) {
+        phoneNumber.setEmployeeExtension(arg);
+    }
+
+    public void setOfficeNumber(String arg) {
+        phoneNumber.setOfficeNumber(arg);
+    }
+
+    public String getOfficeNumber() {
+        return phoneNumber.getOfficeNumber();
+    }
 
     public String getEmployeeTelephoneNumber() {
-        return ("(" + officeNumber + ") " + employeeExtension);
+        return phoneNumber.getEmployeeTelephoneNumber();
     }
+}
+
+class EmployeePhoneNumber {
+    private String employeeExtension;
+    private String officeNumber;
 
     void setEmployeeExtension(String arg) {
         employeeExtension = arg;
@@ -172,12 +196,8 @@ class Employee {
         officeNumber = arg;
     }
 
-    public void placeOrder(Order order) {
-        orders.add(order);
-    }
-
-    public List<Order> getOrders() {
-        return orders;
+    public String getEmployeeTelephoneNumber() {
+        return ("(" + officeNumber + ") " + employeeExtension);
     }
 }
 
