@@ -1,0 +1,77 @@
+commit 527e42e1f5c7c4e5395048e6562c164975e2b179
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 19:36:11 2023 -0600
+
+    Extract SuperClass from employee and customer
+
+commit 5bd6763f11524784ed994a03c4f0687773d4e32f
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 19:20:54 2023 -0600
+
+    Add tests for Employee and EmployeePhoneNumber class
+
+commit 08353c3ccc25ff3e466f95dc3a36e8eeb78c0ff0
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 19:14:09 2023 -0600
+
+    Extract Class Refactoring on Employee Class
+
+commit 375a8399d3f4ff311a2a98315668aae678e38ad5
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 17:52:17 2023 -0600
+
+    Replace Conditional With Polymorphism Refactor
+
+commit be6a311a639b6ea978e65db47c1eeb9eeb6a71ca
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 17:34:42 2023 -0600
+
+    improve readability by moving logic
+
+commit 3cdf58443f270b08bc37aefdadf35ee2b3d44660
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 17:27:32 2023 -0600
+
+    Encapsulate Field Refactor on Product Class
+
+commit 26044d58707578ec6e4ab1d33ff5bee9ecf3d8f6
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 17:08:48 2023 -0600
+
+    fix product class to pass tests
+
+commit 0627b0a98552bae7ba9b6230356a6b8ac4cee984
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 16:56:35 2023 -0600
+
+    Fix customer class to pass tests.
+
+commit ea29f2db3e6685d65877b4230422b4a7da2a9405
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 16:15:29 2023 -0600
+
+    add more tests
+
+commit f65e91dd0d1787bc797b4d893d5b90da73ac7a33
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 16:04:37 2023 -0600
+
+    Rename method refactor
+
+commit 13d6fee74b12389dc9ab8e9e7eae6a7afe2d488d
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 15:37:52 2023 -0600
+
+    add unit tests and minor fixes
+
+commit 5df673d955787c500f5cbbdd672097ae11d28931
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sun Oct 1 14:42:09 2023 -0600
+
+    Add inital code to refactor
+
+commit fd6f0b8522e20752c7d55e24e2a217e5a693c1cf
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Sat Sep 30 19:22:55 2023 -0600
+
+    Create first java file and test repo
