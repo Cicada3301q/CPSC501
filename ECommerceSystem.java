@@ -87,7 +87,7 @@ class ClearanceProduct extends AbstractProduct {
     }
 }
 
-class Person {
+abstract class Person {
     private int id;
     private String name;
     private String email;
