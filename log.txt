@@ -1,3 +1,21 @@
+commit 3bef758749740c7087e71096d86fadb74315de49
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Wed Oct 4 17:03:14 2023 -0600
+
+    Seperate classes into their own files.
+
+commit 5805101b0799346f6faee7f927de7c8c1d046625
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Wed Oct 4 16:51:34 2023 -0600
+
+    Make person class abstract
+
+commit 4c6fa3f23c0617f6aa7e64c8003dc984b51b8aa9
+Author: Quenten <quentenwelch@gmail.com>
+Date:   Tue Oct 3 14:54:40 2023 -0600
+
+    fix product tests to work with refactor
+
 commit 527e42e1f5c7c4e5395048e6562c164975e2b179
 Author: Quenten <quentenwelch@gmail.com>
 Date:   Sun Oct 1 19:36:11 2023 -0600
